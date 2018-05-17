@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517205448) do
+ActiveRecord::Schema.define(version: 20180517220134) do
 
   create_table "seasons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.decimal "number", precision: 10
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180517205448) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   add_foreign_key "seasons", "series", column: "serie_id"
