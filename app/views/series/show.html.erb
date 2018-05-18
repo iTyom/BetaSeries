@@ -1,0 +1,15 @@
+<div class="">
+  <h1><%= @serie.name %></h1>
+
+  <%= %>
+
+  <section class="row">
+    <div class="col-sm-4">
+      <%= cl_image_tag(@serie.photo, width: 300, height: 200,
+                        crop: :fill) %>
+    </div>
+    <div class="col-sm-8">
+      <p>Ville: <%=  %></p>
+    </div>
+  </section>
+</div>

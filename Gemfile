@@ -40,6 +40,8 @@ gem 'dotenv-rails'
 gem 'cloudinary', '~> 1.8', '>= 1.8.3'
 gem 'carrierwave'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'devise', '~> 4.4'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

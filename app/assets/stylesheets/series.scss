@@ -1,3 +1,28 @@
 // Place all the styles related to the Series controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sectionSeries {
+  display: inline-block;
+  margin: 20px;
+  border-radius: 20px;
+  text-align: center;
+
+  -moz-box-shadow: 0px 0px 20px 0px #656565;
+  -webkit-box-shadow: 0px 0px 20px 0px #656565;
+  -o-box-shadow: 0px 0px 20px 0px #656565;
+  box-shadow: 0px 0px 20px 0px #656565;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=20);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+
+  h2 {
+    font-size: 15px;
+  }
+
+  img {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
