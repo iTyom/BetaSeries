@@ -1,15 +1,20 @@
 <div class="">
   <h1><%= @serie.name %></h1>
 
-  <%= %>
 
   <section class="row">
     <div class="col-sm-4">
-      <%= cl_image_tag(@serie.photo, width: 300, height: 200,
-                        crop: :fill) %>
+      <%= cl_image_tag(@serie.photo, width: 199, height: 279,
+                                      crop: :fill) %>
     </div>
     <div class="col-sm-8">
-      <p>Ville: <%=  %></p>
+      <p>Saisons: </p>
+
+      <%= @seasons.each do |season| -%>
+      <p>
+        <%= season.number %>
+      </p>
+      <% end %>
     </div>
   </section>
 </div>
