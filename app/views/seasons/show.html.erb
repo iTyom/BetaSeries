@@ -7,13 +7,13 @@
     </div>
     <div class="col-sm-8">
 
-      <%= @episodes.each do |episode| -%>
+      <% @episodes.each do |episode| %>
       <div class="Episode">
           <div>
             <p class="EpisodeNumber">
-               <%= link_to("Episode "+episode.number.to_s, episode_path(episode.id)) %> :
-               <%= episode.name %> <br />
-               <%= episode.description %>
+              <%= link_to("Episode "+episode.number.to_s, episode_path(episode.id)) %> :
+              <%= episode.name %> <br />
+              <%= episode.description %>
             </p>
           </div>
       </div>
