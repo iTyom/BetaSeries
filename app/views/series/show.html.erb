@@ -8,12 +8,18 @@
                                       crop: :fill) %>
     </div>
     <div class="col-sm-8">
-      <p>Saisons: </p>
 
       <%= @seasons.each do |season| -%>
-      <p>
-        <%= season.number %>
-      </p>
+      <div class="SeasonImage">
+
+
+          <%= cl_image_tag(season.photo, width: 199, height: 279, crop: :fill) %>
+          <div>
+            <p class="SeasonNumber">
+               <%= link_to("Saison "+season.number.to_s, season_path(season.id)) %>
+            </p>
+          </div>
+      </div>
       <% end %>
     </div>
   </section>

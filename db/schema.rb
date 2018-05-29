@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518171535) do
+ActiveRecord::Schema.define(version: 20180528173126) do
+
+  create_table "episodes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "season_id"
+    t.decimal "number", precision: 10
+    t.string "description"
+    t.date "diffusion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["season_id"], name: "index_episodes_on_season_id"
+  end
 
   create_table "seasons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.decimal "number", precision: 10
     t.bigint "serie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["serie_id"], name: "index_seasons_on_serie_id"
   end
 
@@ -44,5 +56,6 @@ ActiveRecord::Schema.define(version: 20180518171535) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "episodes", "seasons"
   add_foreign_key "seasons", "series", column: "serie_id"
 end

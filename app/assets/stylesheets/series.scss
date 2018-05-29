@@ -26,3 +26,10 @@
     border-bottom-right-radius: 20px;
   }
 }
+
+.SeasonImage {
+  display: inline-block;
+  .SeasonNumber {
+    text-align: center;
+  }
+}
