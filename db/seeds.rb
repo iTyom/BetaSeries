@@ -9,6 +9,8 @@
 Episode.destroy_all
 Season.destroy_all
 Serie.destroy_all
+User.destroy_all
+Note.destroy_all
 
 
 def load_image(name)
@@ -31,6 +33,11 @@ crossed01 = Season.create!(number: 1, photo: load_image("Crossed01.jpg"), serie:
 crossed02 = Season.create!(number: 2, photo: load_image("Crossed02.jpg"), serie: crossed)
 crossed03 = Season.create!(number: 3, photo: load_image("Crossed03.jpg"), serie: crossed)
 
+tom = User.create!(username: "Tom", email: "tom.ruscelli@ynov.com", encrypted_password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq", password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq")
+milan = User.create!(username: "Milan", email: "milan.kasprzak@ynov.com", encrypted_password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq", password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq")
+raphael = User.create!(username: "Raphael", email: "raphael_instaboy@ynov.com", encrypted_password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq", password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq")
+darie = User.create!(username: "ColinDarie", email: "colin.darie@ynov.com", encrypted_password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq", password: "$2a$11$LSVLMjwOD5sHbBoEOi5A4uurdWcRTLr0fjD4VTCaj3A02gCz22FAq")
+
 Episode.create!(name: "Super Mario Bros", season: crossed01, number: 1, description: "Super Mario Bros décrypté par Karim Debbache", diffusion: "2016-05-02")
 Episode.create!(name: "Gamer", season: crossed01, number: 2, description: "Gamer décrypté par Karim Debbache", diffusion: "2016-06-02")
 Episode.create!(name: "Silent Hill", season: crossed01, number: 3, description: "Silent Hill décrypté par Karim Debbache", diffusion: "2016-07-02")
@@ -39,18 +46,18 @@ Episode.create!(name: "House of the Dead", season: crossed01, number: 5, descrip
 Episode.create!(name: "Starfighter", season: crossed01, number: 6, description: "Starfighter décrypté par Karim Debbache", diffusion: "2016-10-02")
 Episode.create!(name: "Max Payne", season: crossed01, number: 7, description: "Max Payne décrypté par Karim Debbache", diffusion: "2016-11-02")
 
-Episode.create!(name: "Pilot", season: bb01, number: 1, description: "Walter White commence à produire de la methamphetamine pour subvenir aux besoins de sa famille le jour où il découvre qu'il a un cancer des poumons. Il se met en équipe avec un de ses anciens étudiant, Jesse Pinkman, qui est dealer de meth.", diffusion: "2008-01-20")
-Episode.create!(name: "Cat's in the Bag...", season: bb01, number: 2, description: "Walter et Jesse doivent gérer les deux corps qui se trouvent dans le camping-car. De plus Skyler s'inquiète du comportement de Walter.", diffusion: "2008-01-27")
-Episode.create!(name: "...And the Bag's in the River", season: bb01, number: 3, description: "Walter n'arrive pas a se décider s'il doit tuer ou non Krazy-8. Pendant ce temps, Marie pense que Walter Jr. fume de la marijuana et demande à Hank de le décourager à se droguer.", diffusion: "2008-02-10")
-Episode.create!(name: "Cancer Man", season: bb01, number: 4, description: "La brigade des stups est de plus en plus suspicieuse sur la présense d'un nouveau roi de la drogue à Albuquerque. Walt révèle à Marie et Hank qu'il a un cancer. Pendant ce temps Jesse visite sa famille devenue si étrangère.", diffusion: "2008-02-17")
-Episode.create!(name: "Gray Matter", season: bb01, number: 5, description: "Un ancien ami de Walter lui propose un travail lucratif lui permettant de couvrir ses frais de traitement. Jesse essaie de produire de la meth lui-même.", diffusion: "2008-02-24")
-Episode.create!(name: "Crazy Handful of Nothin'", season: bb01, number: 6, description: "Walter recommence à produire de la meth. Le beau frère de Walter le questionne à propos du vol commis à l'école. Walter et Jesse essaient de trouver un nouveau réseau de distribution.", diffusion: "2008-03-02")
-Episode.create!(name: "A No-Rough-Stuff-Type Deal", season: bb01, number: 7, description: "Walter et Jesse ont des problèmes pour produire la grande quantité de meth promise à Tuco. Skyler met Marie dos au mur concernant sa kleptomanie.", diffusion: "2008-03-10")
-Episode.create!(name: "Good Cop Bad Cop", season: bb01, number: 8, description: "Hank and Marie try to spice up their relationship on Valentine's Day.", diffusion: "2008-02-18")
-Episode.create!(name: "Wedding Day", season: bb01, number: 9, description: "Walt and Hank have a talk before Hank gets married.", diffusion: "2008-02-18")
-Episode.create!(name: "TwaughtHammer", season: bb01, number: 10, description: "Jesse and Badger make a behind the scenes video about their band \"TwaughtHammer\" and show a music video for their song \"Fallacies.\"", diffusion: "2008-02-18")
-Episode.create!(name: "Marie's Confession", season: bb01, number: 11, description: "Marie records a video diary.", diffusion: "2008-02-18")
-Episode.create!(name: "The Break-In", season: bb01, number: 12, description: "Walt and Badger attempt to retrieve a vacuum cleaner stuffed with drug money from an elderly woman's locked garage.", diffusion: "2008-02-25")
+bb01x01 = Episode.create!(name: "Pilot", season: bb01, number: 1, description: "Walter White commence à produire de la methamphetamine pour subvenir aux besoins de sa famille le jour où il découvre qu'il a un cancer des poumons. Il se met en équipe avec un de ses anciens étudiant, Jesse Pinkman, qui est dealer de meth.", diffusion: "2008-01-20")
+bb01x02 = Episode.create!(name: "Cat's in the Bag...", season: bb01, number: 2, description: "Walter et Jesse doivent gérer les deux corps qui se trouvent dans le camping-car. De plus Skyler s'inquiète du comportement de Walter.", diffusion: "2008-01-27")
+bb01x03 = Episode.create!(name: "...And the Bag's in the River", season: bb01, number: 3, description: "Walter n'arrive pas a se décider s'il doit tuer ou non Krazy-8. Pendant ce temps, Marie pense que Walter Jr. fume de la marijuana et demande à Hank de le décourager à se droguer.", diffusion: "2008-02-10")
+bb01x04 = Episode.create!(name: "Cancer Man", season: bb01, number: 4, description: "La brigade des stups est de plus en plus suspicieuse sur la présense d'un nouveau roi de la drogue à Albuquerque. Walt révèle à Marie et Hank qu'il a un cancer. Pendant ce temps Jesse visite sa famille devenue si étrangère.", diffusion: "2008-02-17")
+bb01x05 = Episode.create!(name: "Gray Matter", season: bb01, number: 5, description: "Un ancien ami de Walter lui propose un travail lucratif lui permettant de couvrir ses frais de traitement. Jesse essaie de produire de la meth lui-même.", diffusion: "2008-02-24")
+bb01x06 = Episode.create!(name: "Crazy Handful of Nothin'", season: bb01, number: 6, description: "Walter recommence à produire de la meth. Le beau frère de Walter le questionne à propos du vol commis à l'école. Walter et Jesse essaient de trouver un nouveau réseau de distribution.", diffusion: "2008-03-02")
+bb01x07 = Episode.create!(name: "A No-Rough-Stuff-Type Deal", season: bb01, number: 7, description: "Walter et Jesse ont des problèmes pour produire la grande quantité de meth promise à Tuco. Skyler met Marie dos au mur concernant sa kleptomanie.", diffusion: "2008-03-10")
+bb01x08 = Episode.create!(name: "Good Cop Bad Cop", season: bb01, number: 8, description: "Hank and Marie try to spice up their relationship on Valentine's Day.", diffusion: "2008-02-18")
+bb01x09 = Episode.create!(name: "Wedding Day", season: bb01, number: 9, description: "Walt and Hank have a talk before Hank gets married.", diffusion: "2008-02-18")
+bb01x10 = Episode.create!(name: "TwaughtHammer", season: bb01, number: 10, description: "Jesse and Badger make a behind the scenes video about their band \"TwaughtHammer\" and show a music video for their song \"Fallacies.\"", diffusion: "2008-02-18")
+bb01x11 = Episode.create!(name: "Marie's Confession", season: bb01, number: 11, description: "Marie records a video diary.", diffusion: "2008-02-18")
+bb01x12 = Episode.create!(name: "The Break-In", season: bb01, number: 12, description: "Walt and Badger attempt to retrieve a vacuum cleaner stuffed with drug money from an elderly woman's locked garage.", diffusion: "2008-02-25")
 
 Episode.create!(name: "Seven Thirty-Seven", season: bb02, number: 1, description: "Le business de Walt et Jesse avec Tuco dérape quand ce dernier tue son associé devant leurs yeux. Paranoïaques, les deux hommes sont persuadés qu'ils sont les prochains sur la liste.", diffusion: "2009-03-08")
 Episode.create!(name: "Grilled", season: bb02, number: 2, description: "Hank, le beau frère de Walter, décide de mettre tout en oeuvre pour le retrouver. Toute la famille de Walter est inquiète de sa disparition.", diffusion: "2009-03-15")
@@ -65,3 +72,11 @@ Episode.create!(name: "Over", season: bb02, number: 10, description: "Walt et Ha
 Episode.create!(name: "Mandala", season: bb02, number: 11, description: "Saul propose un accord à Walt et Jesse tandis que ce dernier parle franchement à Jane.", diffusion: "2009-05-17")
 Episode.create!(name: "Phoenix", season: bb02, number: 12, description: "La famille White arrive à un nouveau point. L'addiction de Jesse commence à devenir hors de contrôle et sa relation avec Jane cause quelques problèmes avec Walt comme avec Donald.", diffusion: "2009-05-24")
 Episode.create!(name: "ABQ", season: bb02, number: 13, description: "La famille White arrive à un nouveau point. L'addiction de Jesse commence à devenir hors de contrôle et sa relation avec Jane cause quelques problèmes avec Walt comme avec Donald.", diffusion: "2009-05-31")
+
+Note.create!(user: tom, episode: bb01x01, comment: "Série overated")
+Note.create!(user: milan, episode: bb01x01, comment: "Ok")
+Note.create!(user: tom, episode: bb01x01, comment: "Lien mort")
+Note.create!(user: tom, episode: bb01x01, comment: "Non je rigole, c'est pas un site de téléchargement")
+Note.create!(user: darie, episode: bb01x02, comment: "Je te mets un 19/20 à cette application")
+Note.create!(user: raphael, episode: bb01x02, comment: "Ca me fera une super belle photo instagram")
+Note.create!(user: milan, episode: bb01x03, comment: "Jessie il est tarpin sympa")

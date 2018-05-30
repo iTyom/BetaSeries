@@ -1,0 +1,22 @@
+<div class="">
+  <h1><%= @episode.name %></h1>
+
+
+  <section class="row">
+    <div class="col-sm-4">
+      <%= @episode.description %>
+    </div>
+    <div class="col-sm-8">
+
+
+      <% @notes.each do |note| %>
+      <div class="SeasonImage">
+
+        <%= note.comment %>
+        <%= note.user.username %>
+
+      </div><br />
+      <% end %>
+    </div>
+  </section>
+</div>
