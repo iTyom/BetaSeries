@@ -5,15 +5,15 @@
       <%= cl_image_tag(@season.photo, width: 199, height: 279,
                                       crop: :fill) %>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 containerEpisode">
 
       <% @episodes.each do |episode| %>
-      <div class="Episode">
+      <div class="episode">
           <div>
-            <p class="EpisodeNumber">
-              S<%= @season.number %>x<%= link_to("E"+episode.number.to_s, episode_path(episode.id)) %> :
-              <%= episode.name %> <br />
-              <%= episode.description %>
+            <p class="episodeNumber">
+              <%= link_to("S"+@season.number.to_s + "xE" + episode.number.to_s + " " + episode.name, episode_path(episode.id)) %> <br />Diffusion : <%= episode.diffusion %>
+               <br />
+
             </p>
           </div>
       </div>
