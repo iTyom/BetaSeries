@@ -1,4 +1,4 @@
-<div class="">
+<div class="body">
   <h1><%= @episode.name %></h1>
 
 
@@ -8,13 +8,12 @@
     </div>
     <div class="col-sm-8">
 
-
+      <span id="noteAverage"><%= @notes.average(:note) %></span><br />
       <% @notes.each do |note| %>
       <div class="SeasonImage">
 
         <%= note.comment %>
         <%= note.user.username %>
-
       </div><br />
       <% end %>
     </div>

@@ -6,12 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Note.destroy_all
 Episode.destroy_all
 Season.destroy_all
 Serie.destroy_all
 User.destroy_all
-Note.destroy_all
-
 
 def load_image(name)
   filepath = Rails.root.join("db", "images", name)
@@ -73,10 +72,10 @@ Episode.create!(name: "Mandala", season: bb02, number: 11, description: "Saul pr
 Episode.create!(name: "Phoenix", season: bb02, number: 12, description: "La famille White arrive à un nouveau point. L'addiction de Jesse commence à devenir hors de contrôle et sa relation avec Jane cause quelques problèmes avec Walt comme avec Donald.", diffusion: "2009-05-24")
 Episode.create!(name: "ABQ", season: bb02, number: 13, description: "La famille White arrive à un nouveau point. L'addiction de Jesse commence à devenir hors de contrôle et sa relation avec Jane cause quelques problèmes avec Walt comme avec Donald.", diffusion: "2009-05-31")
 
-Note.create!(user: tom, episode: bb01x01, comment: "Série overated")
-Note.create!(user: milan, episode: bb01x01, comment: "Ok")
-Note.create!(user: tom, episode: bb01x01, comment: "Lien mort")
-Note.create!(user: tom, episode: bb01x01, comment: "Non je rigole, c'est pas un site de téléchargement")
-Note.create!(user: darie, episode: bb01x02, comment: "Je te mets un 19/20 à cette application")
-Note.create!(user: raphael, episode: bb01x02, comment: "Ca me fera une super belle photo instagram")
-Note.create!(user: milan, episode: bb01x03, comment: "Jessie il est tarpin sympa")
+Note.create!(user: tom, episode: bb01x01, comment: "Série overated", note: 0)
+Note.create!(user: milan, episode: bb01x01, comment: "Ok", note: 3.5)
+Note.create!(user: tom, episode: bb01x01, comment: "Lien mort", note: 1)
+Note.create!(user: tom, episode: bb01x01, comment: "Non je rigole, c'est pas un site de téléchargement", note: 5)
+Note.create!(user: darie, episode: bb01x02, comment: "Je te mets un 19/20 à cette application", note: 5)
+Note.create!(user: raphael, episode: bb01x02, comment: "Ca me fera une super belle photo instagram", note: 4)
+Note.create!(user: milan, episode: bb01x03, comment: "Jessie il est tarpin sympa", note: 2)
