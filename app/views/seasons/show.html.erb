@@ -11,7 +11,7 @@
       <div class="Episode">
           <div>
             <p class="EpisodeNumber">
-              <%= link_to("Episode "+episode.number.to_s, episode_path(episode.id)) %> :
+              S<%= @season.number %>x<%= link_to("E"+episode.number.to_s, episode_path(episode.id)) %> :
               <%= episode.name %> <br />
               <%= episode.description %>
             </p>
