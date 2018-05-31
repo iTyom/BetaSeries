@@ -4,7 +4,19 @@
 
   <section class="row">
     <div class="col-sm-4">
-      <%= @episode.description %>
+      <%= @episode.description %><br /><br />
+      <%= form_tag "/episodes", method: "post" do %>
+        <select name="selectNote" id="selectNote" />
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br />
+        <textarea id="textComment" name="textComment" cols="24" rows="6"></textarea><br />
+        <input type="submit" value="Ajouter un avis" />
+      <% end %>
     </div>
     <div class="col-sm-8">
 
@@ -16,6 +28,9 @@
         <%= note.user.username %>
       </div><br />
       <% end %>
+
+
+
     </div>
   </section>
 </div>
