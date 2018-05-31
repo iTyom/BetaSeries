@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :notes
   resources :episodes
   devise_for :users
   # resources :series
@@ -6,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :series, only: [:show]
   resources :seasons, only: [:show]
-  resources :episodes, only: [:show]
+  resources :episodes, only: [:show] do
+    resources :notes, only: [:create]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "series#index"

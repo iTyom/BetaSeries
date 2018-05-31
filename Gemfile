@@ -42,6 +42,7 @@ gem 'carrierwave'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'devise', '~> 4.4'
 gem 'devise-i18n'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
