@@ -1,0 +1,6 @@
+<h4>Ajoutez votre commentaire :</h4>
+<%= simple_form_for([episode, note]) do |f| %>
+  <%= f.input :comment, label: false %>
+  <%= f.input :note, collection: 0..5, selected: 5, label: false %>
+  <%= f.button :submit %>
+<% end %>

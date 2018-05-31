@@ -1,0 +1,32 @@
+<div class="body">
+  <h1><%= @episode.name %></h1>
+
+
+  <section class="row">
+    <div class="col-sm-4">
+      <%= @episode.description %><br /><br />
+      <div class="comment-instruction">
+        <% if user_signed_in? %>
+          <%= render "notes/form", episode: @episode, note: @new_note%>
+        <% else %>
+          <p>Vous devez être connecté.e pour laisser un commentaire.</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="notes">
+        <% if @episode.notes.any? %>
+          <h2>Notes:</h2>
+
+          <% @episode.notes.each do |note| %>
+            <%= render "notes/show", note: note %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+
+
+</div>
