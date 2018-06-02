@@ -17,7 +17,7 @@
     <div class="col-sm-8">
       <div class="notes">
         <% if @episode.notes.any? %>
-          <h2>Notes:</h2>
+          <h2><%= @notes.average(:note) %>/5</h2>
 
           <% @episode.notes.each do |note| %>
             <%= render "notes/show", note: note %>
