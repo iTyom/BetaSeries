@@ -11,7 +11,10 @@
       <div class="episode">
           <div>
             <p class="episodeNumber">
-              <%= link_to("S"+@season.number.to_s + "xE" + episode.number.to_s + " " + episode.name, episode_path(episode.id)) %> <br />Diffusion : <%= episode.diffusion %>
+              <%= link_to("S"+@season.number.to_s + "xE" + episode.number.to_s + " " + episode.name, episode_path(episode.id)) %>
+              <%=  %>
+              
+              <br />Diffusion : <%= episode.diffusion %>
                <br />
 
             </p>
