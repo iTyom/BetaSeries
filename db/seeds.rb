@@ -17,11 +17,11 @@ def load_image(name)
   File.open(filepath)
 end
 
-bb = Serie.create!(name: "Breaking Bad", photo: load_image("BreakingBad.jpg"))
-crossed = Serie.create!(name: "Crossed", photo: load_image("Crossed.jpg"))
-drWho = Serie.create!(name: "Doctor Who", photo: load_image("DoctorWho.jpg"))
-got = Serie.create!(name: "Game Of Thrones", photo: load_image("GameOfThrones.jpg"))
-theWire = Serie.create!(name: "The Wire", photo: load_image("TheWire.jpg"))
+bb = Serie.create!(name: "Breaking Bad", photo: load_image("BreakingBad.jpg"), view: false)
+crossed = Serie.create!(name: "Crossed", photo: load_image("Crossed.jpg"), view: false)
+drWho = Serie.create!(name: "Doctor Who", photo: load_image("DoctorWho.jpg"), view: false)
+got = Serie.create!(name: "Game Of Thrones", photo: load_image("GameOfThrones.jpg"), view: true)
+theWire = Serie.create!(name: "The Wire", photo: load_image("TheWire.jpg"), view: true)
 
 bb01 = Season.create!(number: 1, photo: load_image("BreakingBad01.jpg"), serie: bb)
 bb02 = Season.create!(number: 2, photo: load_image("BreakingBad02.jpg"), serie: bb)

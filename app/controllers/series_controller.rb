@@ -1,6 +1,6 @@
 class SeriesController < ApplicationController
   def index
-    @series = Serie.all
+    @series = Serie.where("view = 'true'")
   end
 
   def show
