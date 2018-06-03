@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :username, presence: true
   has_many :notes
+  has_many :bookmarks
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

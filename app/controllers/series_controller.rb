@@ -6,6 +6,7 @@ class SeriesController < ApplicationController
   def show
     @serie = Serie.find(params[:id])
     @seasons = Season.where("serie_id = ?", params[:id])
+    @new_bookmark = Bookmark.new
   end
 
 

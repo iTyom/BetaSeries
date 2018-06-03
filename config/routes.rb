@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  resources :bookmarks
   resources :notes
   resources :episodes
   devise_for :users
   # resources :series
   # resources :seasons
 
-  resources :series, only: [:show]
+  resources :series, only: [:show] do
+    resources :bookmarks, only: [:create]
+  end
+
   resources :seasons, only: [:show]
+
   resources :episodes, only: [:show] do
     resources :notes, only: [:create]
   end
