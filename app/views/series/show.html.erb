@@ -6,6 +6,13 @@
     <div class="col-sm-4">
       <%= cl_image_tag(@serie.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279,
                                       crop: :fill) %>
+      <div class="bookmark-instruction">
+        <% if user_signed_in? %>
+          <%= render "bookmarks/form", serie: @serie, bookmark: @new_bookmark%>
+        <% else %>
+          <p>Vous devez être connecté.e pour aimer cette série</p>
+        <% end %>
+      </div>
     </div>
     <div class="col-sm-8">
 
