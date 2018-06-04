@@ -4,16 +4,14 @@
 
   <section class="row">
     <div class="col-sm-4">
-      <%= cl_image_tag(@serie.photo, width: 199, height: 279,
+      <%= cl_image_tag(@serie.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279,
                                       crop: :fill) %>
     </div>
     <div class="col-sm-8">
 
       <% @seasons.each do |season| %>
       <div class="SeasonImage">
-
-
-          <%= cl_image_tag(season.photo, width: 199, height: 279, crop: :fill) %>
+          <%= cl_image_tag(season.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279, crop: :fill) %>
           <div>
             <p class="SeasonNumber">
                <%= link_to("Saison "+season.number.to_s, season_path(season.id)) %>

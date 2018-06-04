@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dnh0iozvn
+  api_key: '515293538268423'
+  api_secret: uNBV3UZ8VT6oBwoXqlATXkifkqI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dnh0iozvn
+  api_key: '515293538268423'
+  api_secret: uNBV3UZ8VT6oBwoXqlATXkifkqI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dnh0iozvn
+  api_key: '515293538268423'
+  api_secret: uNBV3UZ8VT6oBwoXqlATXkifkqI
+  enhance_image_tag: true
+  static_image_support: false

@@ -3,7 +3,7 @@
 <%- @series.each do |serie| -%>
   <section class='sectionSeries'>
     <h2><%= link_to(serie.name, series_path(serie)) %></h2>
-    <%= cl_image_tag serie.photo, width: 199, height: 279,
-                                    crop: :fill %>
+    <%= cl_image_tag serie.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279,
+                                    crop: :fill%>
   </section>
 <% end %>

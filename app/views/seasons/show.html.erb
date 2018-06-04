@@ -2,7 +2,7 @@
   <h1>Saison <%= @season.number %></h1>
   <section class="row">
     <div class="col-sm-4">
-      <%= cl_image_tag(@season.photo, width: 199, height: 279,
+      <%= cl_image_tag(@season.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279,
                                       crop: :fill) %>
     </div>
     <div class="col-sm-8">
@@ -13,7 +13,6 @@
             <p class="EpisodeNumber">
               S<%= @season.number %>x<%= link_to("E"+episode.number.to_s, episode_path(episode.id)) %> :
               <%= episode.name %> <br />
-              <%= episode.description %>
             </p>
           </div>
       </div>
