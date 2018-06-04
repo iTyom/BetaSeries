@@ -1,10 +1,9 @@
 class SeriesController < ApplicationController
   def index
-    @series = Serie.all
+    @series = Serie.where("view = 'true'")
   end
 
   def show
-    @series = Serie.all
     @serie = Serie.find(params[:id])
     @seasons = Season.where("serie_id = ?", params[:id])
     @new_bookmark = Bookmark.new
