@@ -1,8 +1,8 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
-    def show
-      @bookmarks = Bookmark.all
+    def index
+      @bookmarks = Bookmark.where
     end
 
     def new

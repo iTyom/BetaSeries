@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :delete]
   end
 
+  resources :bookmarks, only: [:show]
+
   resources :seasons, only: [:show]
 
   resources :episodes, only: [:show] do
