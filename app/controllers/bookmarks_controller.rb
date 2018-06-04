@@ -2,7 +2,11 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
     def index
-      @bookmarks = Bookmark.where
+      @bookmarks = Bookmark.where("user_id = ?", current_user)
+    end
+
+    def show
+      @bookmarks = Bookmark.where("user_id = ?", current_user)
     end
 
     def new
