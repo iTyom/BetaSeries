@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookmarks/show'
+
   resources :bookmarks
   resources :notes
   resources :episodes
