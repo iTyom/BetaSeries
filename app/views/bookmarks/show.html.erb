@@ -1,0 +1,15 @@
+<div class="">
+  <h1>Saison <%= @season.number %></h1>
+  <section class="row">
+    <div class="col-sm-4">
+      <%= cl_image_tag(@season.photo, width: 199, height: 279,
+                                      crop: :fill) %>
+    </div>
+    <div class="col-sm-8 containerEpisode">
+
+      <% @bookmarks.each do |bookmark| %>
+        <% bookmark.serie.name %>
+      <% end %>
+    </div>
+  </section>
+</div>

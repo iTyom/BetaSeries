@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # resources :seasons
 
   resources :series, only: [:show] do
-    resources :bookmarks, only: [:create]
+    resources :bookmarks, only: [:create, :delete]
   end
 
   resources :seasons, only: [:show]
