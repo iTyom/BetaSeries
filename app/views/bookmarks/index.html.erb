@@ -1,16 +1,8 @@
-<div class="">
-  <h1>Saison <%=  %></h1>
-  <section class="row">
-    <div class="col-sm-4">
-      <%=  %>
-    </div>
-    <div class="col-sm-8 containerEpisode">
 
-      <% @bookmarks.each do |bookmark| %>
-      <div class="bookmark">
-        <%= bookmark.serie.name %>
-      </div>
-      <% end %>
-    </div>
+<%- @bookmarks.each do |bookmark| -%>
+  <section class='sectionSeries'>
+    <h2><%= link_to(bookmark.serie.name, series_path(bookmark.serie)) %></h2>
+    <%= cl_image_tag bookmark.serie.photo, width: 199, height: 279,
+                                    crop: :fill %>
   </section>
-</div>
+<% end %>
