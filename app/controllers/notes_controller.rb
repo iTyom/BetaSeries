@@ -15,7 +15,7 @@ class NotesController < ApplicationController
       render "episodes/show"
     end
   end
-
+ 
   private
   def note_params
     params.require(:note).permit(:episode, :user, :note, :comment)
