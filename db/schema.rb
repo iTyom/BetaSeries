@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180605080917) do
 
   create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -21,9 +20,6 @@ ActiveRecord::Schema.define(version: 20180605080917) do
     t.index ["serie_id"], name: "index_bookmarks_on_serie_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
-=======
-ActiveRecord::Schema.define(version: 20180602094307) do
->>>>>>> master
 
   create_table "episodes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"

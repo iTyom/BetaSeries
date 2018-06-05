@@ -6,7 +6,6 @@
     <div class="col-sm-4">
       <%= @episode.description %><br /><br />
       <div class="comment-instruction">
-<<<<<<< HEAD
 
         <% if user_signed_in? %>
           <% if @users_episodes_series_view.present? %>
@@ -19,8 +18,6 @@
         <% else %>
           <p>Vous devez être connecté.e pour marquer comme vu cet épisode</p>
         <% end %>
-=======
->>>>>>> master
         <% if user_signed_in? %>
           <%= render "notes/form", episode: @episode, note: @new_note%>
         <% else %>
@@ -28,10 +25,7 @@
         <% end %>
       </div>
     </div>
-<<<<<<< HEAD
     
-=======
->>>>>>> master
 
     <div class="col-sm-8">
       <div class="notes">
@@ -45,10 +39,4 @@
       </div>
     </div>
   </section>
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
 </div>

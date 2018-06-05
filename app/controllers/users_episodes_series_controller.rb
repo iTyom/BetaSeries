@@ -18,7 +18,7 @@ class UsersEpisodesSeriesController < ApplicationController
       render "episodes/show"
     end
   end
- 
+
   def destroy
     @episode = Episode.find(params[:id])
     @season = Season.where("episode_id = ?", params[:id])
