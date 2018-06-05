@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users_episodes_series
   resources :bookmarks
   resources :notes
   resources :episodes
