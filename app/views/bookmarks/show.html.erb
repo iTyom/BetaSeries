@@ -1,0 +1,25 @@
+<div class="">
+  <h1>Saison <%=  %></h1>
+  <section class="row">
+    <div class="col-sm-4">
+      <%=  %>
+    </div>
+    <div class="col-sm-8 containerEpisode">
+
+      <% @bookmarks.each do |bookmark| %>
+      <div class="episode">
+          <div>
+            <p class="episodeNumber">
+
+              <%=  %>
+
+              <br />Diffusion : <%= %>
+               <br />
+
+            </p>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </section>
+</div>

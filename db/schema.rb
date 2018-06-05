@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529194419) do
+ActiveRecord::Schema.define(version: 20180605080917) do
+
+  create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "serie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["serie_id"], name: "index_bookmarks_on_serie_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "episodes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -21,6 +30,17 @@ ActiveRecord::Schema.define(version: 20180529194419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["season_id"], name: "index_episodes_on_season_id"
+  end
+
+  create_table "notes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "episode_id"
+    t.decimal "note", precision: 10
+    t.text "comment", limit: 4294967295
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["episode_id"], name: "index_notes_on_episode_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "seasons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180529194419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.boolean "view"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -57,6 +78,24 @@ ActiveRecord::Schema.define(version: 20180529194419) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_episodes_series", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "serie_id"
+    t.bigint "episode_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["episode_id"], name: "index_users_episodes_series_on_episode_id"
+    t.index ["serie_id"], name: "index_users_episodes_series_on_serie_id"
+    t.index ["user_id"], name: "index_users_episodes_series_on_user_id"
+  end
+
+  add_foreign_key "bookmarks", "series", column: "serie_id"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "episodes", "seasons"
+  add_foreign_key "notes", "episodes"
+  add_foreign_key "notes", "users"
   add_foreign_key "seasons", "series", column: "serie_id"
+  add_foreign_key "users_episodes_series", "episodes"
+  add_foreign_key "users_episodes_series", "series", column: "serie_id"
+  add_foreign_key "users_episodes_series", "users"
 end

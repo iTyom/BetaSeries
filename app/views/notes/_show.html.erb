@@ -1,0 +1,7 @@
+<section class="note">
+  <blockquote>
+    <%= note.comment %><%=  %>
+  </blockquote>
+  <p class="small text-right">Par <%= note.user.username %>
+    le <%= l(note.created_at.to_date, format: "%d/%m/%Y") %></p>
+</section>

@@ -1,12 +1,25 @@
-<div class="">
+<div class="body">
   <h1><%= @serie.name %></h1>
 
+  <section class="row containerLeft">
+    <div class="col-sm-4 imgSerie">
+      <%= cl_image_tag(@serie.photo, width: 199, height: 279, crop: :fill) %>
+      <div class="bookmark">
 
-  <section class="row">
-    <div class="col-sm-4">
-      <%= cl_image_tag(@serie.photo, :cloud_name => 'dnh0iozvn', width: 199, height: 279,
-                                      crop: :fill) %>
+          <% if user_signed_in? %>
+            <% if @bookmark.present? %>
+              <!--  -->
+              <%= link_to("Je n'aime plus", bookmark_path(:series_id => @serie.id), :method=>:delete, class: "btn-delete") %>
+            <% else %>
+              <%= link_to("J'aime", new_bookmark_path(:series_id => @serie.id), :action=>:create, class: "btn-delete") %>
+            <% end %>
+          <% else %>
+            <p>Vous devez être connecté.e pour aimer cette série</p>
+          <% end %>
+      </div>
     </div>
+
+
     <div class="col-sm-8">
 
       <% @seasons.each do |season| %>
