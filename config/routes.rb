@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :users_episodes_series
   resources :bookmarks
+=======
+>>>>>>> master
   resources :notes
   resources :episodes
   devise_for :users
@@ -14,7 +17,10 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [:show]
 
   resources :seasons, only: [:show]
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   resources :episodes, only: [:show] do
     resources :notes, only: [:create]
   end
