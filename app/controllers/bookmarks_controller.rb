@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
 
     def index
       @bookmarks = Bookmark.where("user_id = ?", current_user)
-      
+
     end
 
     def show
@@ -34,6 +34,6 @@ class BookmarksController < ApplicationController
 
     private
     def bookmark_params
-      params.permit(:serie, :use)
+      params.permit(:serie, :user)
     end
 end

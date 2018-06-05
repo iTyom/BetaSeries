@@ -6,6 +6,18 @@
     <div class="col-sm-4">
       <%= @episode.description %><br /><br />
       <div class="comment-instruction">
+
+        <% if user_signed_in? %>
+          <% if @users_episodes_series_view.present? %>
+            <%= link_to("Je n'ai pas vu", users_episodes_series_path(:series_id => @episode.season.serie.id, :episodes_id => @episode.id,
+              :season_id => @episode.season.id), :method=>:delete, class: "btn-delete") %>
+          <% else %>
+            <%= link_to("J'ai vu", new_users_episodes_series_path(:series_id => @episode.season.serie.id, :episodes_id => @episode.id,
+              :season_id => @episode.season.id), :action=>:create, class: "btn-delete") %>
+          <% end %>
+        <% else %>
+          <p>Vous devez être connecté.e pour marquer comme vu cet épisode</p>
+        <% end %>
         <% if user_signed_in? %>
           <%= render "notes/form", episode: @episode, note: @new_note%>
         <% else %>
